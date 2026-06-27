@@ -16,6 +16,7 @@ const serverSchema = z.object({
   GUEST_SERVICES_URL: z.url(),
   QUEUE_DB_FILE_NAME: z.string(),
   ERRORS_DB_FILE_NAME: z.string(),
+  OPENROUTER_OPENCODE_BASE_URL: z.string().optional(),
 });
 
 const schema = serverSchema.extend(publicSchema.shape);

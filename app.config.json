@@ -1,5 +1,16 @@
 {
-  "crons": [],
+  "crons": [
+    {
+      "slug": "daily-knowledge-refresh",
+      "name": "Ежедневное обновление базы знаний BotForge",
+      "description": "Раз в день обновляет знания о платформах ботов, интеграциях и трендах автоматизации.",
+      "schedule": "0 9 * * *",
+      "rpcEndpoint": "refreshKnowledgeDaily",
+      "isEnabled": true,
+      "timezone": "Europe/Moscow",
+      "agent": "standard"
+    }
+  ],
   "events": [],
   "webhooks": []
 }

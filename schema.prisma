@@ -18,3 +18,28 @@ model User {
 
   // Additional columns can be added here
 }
+
+model BotBlueprint {
+  id            String   @id @default(cuid())
+  name          String
+  category      String
+  prompt        String
+  platforms     String
+  summary       String
+  features      String
+  commands      String
+  integrations  String
+  knowledgeBase String
+  launchPlan    String
+  createdAt     DateTime @default(now())
+}
+
+model KnowledgeSnapshot {
+  id        String   @id @default(cuid())
+  headline  String
+  items     String
+  sources   String
+  sessionId String?
+  status    String?
+  createdAt DateTime @default(now())
+}
