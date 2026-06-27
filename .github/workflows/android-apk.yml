@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 jobs:
@@ -40,3 +40,16 @@ jobs:
           name: botforge-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
+      - name: Publish APK release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest-debug
+          name: BotForge debug APK
+          body: |
+            Автоматическая debug-сборка APK из main.
+
+            APK открывает веб-приложение BotForge: https://botforge-poi31051.adaptive.ai
+          artifacts: android/app/build/outputs/apk/debug/app-debug.apk
+          allowUpdates: true
+          replacesArtifacts: true
